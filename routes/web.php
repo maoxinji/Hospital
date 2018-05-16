@@ -23,3 +23,10 @@ Route::get('foo', function () {
 Route::match(['get'], '/user', function () {
         return 'user Hello World';
 });
+
+
+Route::namespace('Admin')->group(function () {
+    // Controllers Within The "App\Http\Controllers\Admin" Namespace
+
+    Route::get('user/index', 'User@index');
+});
