@@ -29,4 +29,11 @@ Route::namespace('Admin')->group(function () {
     // Controllers Within The "App\Http\Controllers\Admin" Namespace
 
     Route::get('user/index', 'User@index');
+
+	Route::get('user/add', 'User@add');
+    
+
 });
+
+
+

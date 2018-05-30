@@ -4,16 +4,21 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Redis;
+use Illuminate\Http\Request;
 
 class User extends Controller
 {
     
-    public function index(){
-        Redis::set('name', 'Taylor');
+    public function index(Request $request){
+      
+        $environment = \App::environment('local');
 
-        $values = Redis::get('name');
+        dump($environment);
+    }
 
-        var_dump($values);exit;
+
+    public function add(){
+        var_dump(1);exit;
     }
 
 }
