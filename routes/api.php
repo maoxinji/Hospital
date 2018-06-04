@@ -16,3 +16,12 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::namespace('API')->middleware('auth:api')->group(function () {
+    // Controllers Within The "App\Http\Controllers\API" Namespace
+
+	Route::get('photo/index', 'PhotoController@index');
+    
+	Route::get('photo/store', 'PhotoController@store');
+});

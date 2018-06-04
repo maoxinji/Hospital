@@ -20,10 +20,6 @@ Route::get('foo', function () {
     return 'Hello World';
 });
 
-Route::match(['get'], '/user', function () {
-        return 'user Hello World';
-});
-
 
 Route::namespace('Admin')->group(function () {
     // Controllers Within The "App\Http\Controllers\Admin" Namespace
@@ -50,3 +46,7 @@ Route::post('hello_from_form', function (){
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
